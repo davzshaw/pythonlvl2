@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #1e90ff;
+            background-color: #fff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1c86ee;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para el alert */
+        .alert {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .close-alert {
+            cursor: pointer;
+            font-weight: bold;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="home">Home</a>
+        <a href="contact">Contact</a>
+        <a href="about">About</a>
+    </nav>
+</header>
+
+<div class="container" id="home">
+    <h1>Bienvenido</h1>
+    <form id="nameForm">
+        <div class="form-group">
+            <label for="username">Ingresa tu nombre acá</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+<!-- Alert -->
+<div class="alert" id="alertBox">
+    <span class="close-alert" onclick="closeAlert()">×</span>
+    <p id="alertMessage"></p>
+</div>
+
+<script>
+    document.getElementById('nameForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        showAlert(`¡Hola ${username}! Te damos la bienvenida a nuestra página. 😊`);
+    });
+
+    function showAlert(message) {
+        document.getElementById('alertMessage').textContent = message;
+        document.getElementById('alertBox').style.display = 'block';
+    }
+
+    function closeAlert() {
+        document.getElementById('alertBox').style.display = 'none';
+    }
+</script>
+</body>
+</html>

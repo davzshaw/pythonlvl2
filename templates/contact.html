@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - David Torres</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9f0f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            margin: 20px auto; /* Añadido para centrar el contenedor */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #1e90ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="home">Home</a>
+        <a href="contact">Contact</a>
+        <a href="about">About</a>
+    </nav>
+</header>
+<div class="container">
+    <h1>Contact Me</h1>
+    <p><span class="highlight">David Torres</span><br>Tutor de Python | Kodland LatAm</p>
+    <p>Siempre dispuesto a ayudar</p>
+
+    <div class="contact-info">
+        <p class="contact-item"><strong>Slack:</strong> David Torres (ID: D063RLRR4UT)</p>
+        <p class="contact-item"><strong>Email:</strong> j.david.carrillo.torres@kodland.team</p>
+        <p class="contact-item"><strong>Phone:</strong> +57 310 7053 966</p>
+        <p class="contact-item"><strong>Telegram:</strong> @davzshaw</p>
+    </div>
+
+    <p><em>LatAm Kodland Tutor | [01/11/23] (hace <span id="days-since-start"></span> días)</em></p>
+    <script>
+        function calculateDaysSince(dateString) {
+            const startDate = new Date(dateString);
+            const currentDate = new Date();
+            const timeDifference = currentDate - startDate;
+            const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            return daysDifference;
+        }
+
+        document.getElementById('days-since-start').textContent = calculateDaysSince('2023-11-01');
+    </script>
+</div>
+</body>
+</html>
